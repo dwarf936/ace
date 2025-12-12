@@ -72,6 +72,11 @@ class DbWipe extends BaseCommand {
   static description: string = 'Drop all tables, views and types in database'
 }
 
+class EnvGenerate extends BaseCommand {
+  static commandName: string = 'env:generate'
+  static description: string = 'Generate environment variables file'
+}
+
 kernel.addLoader(
   new ListLoader([
     HelpCommand,
@@ -84,6 +89,7 @@ kernel.addLoader(
     DbSeed,
     DbTruncate,
     DbWipe,
+    EnvGenerate,
   ])
 )
 
